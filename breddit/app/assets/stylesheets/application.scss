@@ -1,0 +1,13 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.media-body{
+  border-style: solid;
+      border-width: 1px;
+      color: #ccc;
+}
+
+.media-body p{
+      color: #000;
+}
