@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  # get 'furniture/'
-
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'furniture#home'
+  root 'posts#index'
 
   # Example of regular route:
-    
-    get 'furniture/:pid' => 'furniture#details'
-    get 'furniture/' => 'furniture#list'
+
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

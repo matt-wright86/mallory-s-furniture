@@ -70,7 +70,7 @@
 
                 <%= link_to(image_tag(furniture.img_file, :title => "Home"), "furniture/#{furniture.pid}/") %>
                 <h3><%  @futniture %> </h3>
-            <h4> <%=furniture.item%></h4>
+            <h4> <%=link_to furniture.item, "furniture/#{furniture.pid}/"%></h4>
             <h6><%= furniture.ldisc %></h6>
             <h5>Price: $<%= furniture.price %></h5>
             <p><%=truncate furniture.description, length: 160 %></p>
