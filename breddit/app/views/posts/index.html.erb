@@ -2,22 +2,28 @@
   <h1>Breddit <small>functionality absent (even when working)</small></h1>
 </div>
 
-<br>
-
 <div class="container">
+  <button class="btn btn-default"><%= link_to 'New Post', new_post_path %></button>
   <% @posts.each do |post| %>
+
   <div class="media">
+
+  </div>
+
+    <div class="upv">
     <div class="media-left media-top">
       <a href="#">
         <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGZkY2NlM2E1YSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZmRjY2UzYTVhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40NjA5Mzc1IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="...">
       </a>
+
+      <td><%= pluralize(post.votes.count, "vote") %></td>
+        <td><%= button_to '+1', upvote_post_path(post), method: :post %></td>
     </div>
 
     <div class="media-body">
-      <h4 class="media-heading"><%=link_to post.name %></h4>
+      <h4 class="media-heading"><%=link_to post.name, post%></h4>
         <small>submitted <%= post.created_at.to_s(:long)  %></small>
       <p> <%= truncate post.description, length: 400 %> </p>
-
       <small>1540 comments share</small>
     </div>
    </div>
