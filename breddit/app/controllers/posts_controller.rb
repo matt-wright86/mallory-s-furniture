@@ -11,8 +11,16 @@ def upvote
   redirect_to(posts_path)
 end
 
+def downvote
+  @posts = Post.find(params[:id])
+  @posts.votes.last.destroy
+  redirect_to(posts_path)
+end
+
+
   def index
-      @posts = Post.all
+      unorganized_list_of_posts = Post.all
+      @posts = unorganized_list_of_posts.sort_by{|post| -post.votes.count }
   end
 
   def edit

@@ -1,6 +1,15 @@
-<h1>Edit Post</h1>
+<div class="page-header">
+  <h1><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>Breddit <small>edit post</small></h1>
+<br>
+</div>
+<div class="container">
+  <%= simple_form_for @post do |f| %>
 
-<%= render 'form' %>
+    <%= f.input :name, label: 'url', as: :url %>
+    <%= f.input :description, :cols => 70, :rows => 30 %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
