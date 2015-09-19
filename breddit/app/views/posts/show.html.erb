@@ -1,10 +1,14 @@
 <div class="page-header">
   <h1><%= link_to @posts.name, "http://#{@posts.name}" %> <small>(external link)</small></h1>
+
+  <%= image_tag @posts.photo, class: "img-thumbnail" %>
+
 </div>
 
 <div class="panel panel-default">
   <div class="panel-body">
     <%= simple_format @posts.description %>
+
 
     <%= button_to upvote_post_path, method: :post, class: "btn btn-primary btn-xs" do %>
           <%= (@post.votes.count) %>

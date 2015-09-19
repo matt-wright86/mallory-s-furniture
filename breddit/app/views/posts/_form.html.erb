@@ -1,6 +1,7 @@
 <div class="container">
   <%= simple_form_for @post do |f| %>
     <%= f.input :name, label: 'url', :input_html => { :value => 'http://' } %>
+    <%= f.input :photo, label: 'image link', :input_html => { :value => 'http://' } %>
     <%= f.input :description, :cols => 70, :rows => 30 %>
     <%= f.button :submit %>
   <% end %>

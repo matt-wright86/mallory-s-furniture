@@ -6,6 +6,8 @@
   <%= simple_form_for @post do |f| %>
 
     <%= f.input :name, label: 'url', as: :url %>
+    <%= f.input :photo, label: 'image link' %>
+
     <%= f.input :description, :cols => 70, :rows => 30 %>
     <%= f.button :submit %>
   <% end %>

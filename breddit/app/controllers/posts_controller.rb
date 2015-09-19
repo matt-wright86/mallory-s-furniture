@@ -65,8 +65,7 @@ end
   end
 
   def post_params
-    params.require(:post).permit(:name, :description)
-
+    params.require(:post).permit(:name, :description, :photo)
   end
 
 end
